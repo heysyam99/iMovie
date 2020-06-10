@@ -1,5 +1,7 @@
 # imovie
 
+This repo is intended for Pre-Interview for the role Fullstack-Developer in Revenue Monster. Any pull request and enhancment will be accepted.
+
 ## Project setup
 ```
 yarn install
