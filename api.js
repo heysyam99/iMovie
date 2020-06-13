@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export default class API {
    static get(module, params) {
-      if (module === null) return
+      if (module === 'null' || module === 'null/null') return
       try {
          const opts = this._opts(module, params, 'get')
          return axios(opts)
