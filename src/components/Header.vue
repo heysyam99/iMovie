@@ -100,6 +100,7 @@ export default {
 
    methods: {
       getBG() {
+         if (!this.currentMovie?.backdrop_path) return
          return {
             background: `url(https://image.tmdb.org/t/p/original/${this.currentMovie?.backdrop_path})`,
          }
