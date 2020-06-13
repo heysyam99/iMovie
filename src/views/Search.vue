@@ -13,18 +13,18 @@
           <div
             class="col-lg-3 col-md-4 col-sm-6 col-xs1-8 col-xs-12"
             v-for="(movie, idx) in movieSuggestion"
-            :key="movie.id"
+            :key="`${movie.id}-${idx}`"
           >
             <div class="item" v-if="idx >= startRange && idx <= endRange">
               <div class="status">
                 <div
                   class="rating"
-                  v-if="movie.vote_average !== 0 || movie.vote_average !== undefined"
+                  v-if="movie.vote_average !== 0 && movie.vote_average !== undefined"
                 >{{ movieRating(movie.vote_average) }}</div>
               </div>
               <a class="poster" @click="posterClick(movie)">
                 <img
-                  v-if="movie.poster_path !== null || movie.poster_path !== undefined"
+                  v-if="movie.poster_path !== null && movie.poster_path !== undefined"
                   :src="getPosterURL(movie.poster_path)"
                 />
               </a>
@@ -77,7 +77,6 @@ export default {
 
   methods: {
     getPosterURL(path) {
-      if (path === undefined || path === null) return;
       return `https://image.tmdb.org/t/p/original/${path}`;
     },
 

@@ -81,6 +81,7 @@ export default {
 
    methods: {
       getPosterURL(path) {
+         if (path === undefined || path === null) return;
          return `https://image.tmdb.org/t/p/original/${path}`
       },
 
