@@ -81,10 +81,10 @@ export default {
    },
 
    watch: {
-      $route({ params }) {
-         this.currentMode = params?.type ? params.type : null
-         this.currentID = params?.id ? params.id : null
-         if (!params?.type || params?.keyword) {
+      $route({ params: { type, id, keyword }}) {
+         this.currentMode = type ? type : null
+         this.currentID = id ? id : null
+         if (!type || keyword) {
             this.currentMovie = null
          }
       },
